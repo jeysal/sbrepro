@@ -1,3 +1,5 @@
+await new Promise((resolve) => setTimeout(resolve, 1000));
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
@@ -9,6 +11,13 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ backgroundColor: "red" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default preview;
